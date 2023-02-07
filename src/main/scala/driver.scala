@@ -1,9 +1,13 @@
 package org.quantexa.exerciset1
 
 import com.typesafe.config.{Config, ConfigFactory}
+import javafx.beans.binding.When
 import org.apache.log4j.{Level, Logger}
+import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
-import org.apache.spark.sql.functions.{col, date_format, desc, to_date}
+import org.apache.spark.sql.functions.{col, date_format, desc, lag, lit, to_date, when}
+import org.apache.spark.sql.functions._
+import org.quantexa.exerciset1.solutions.solveForQ3
 
 import java.time.{LocalDate, LocalDateTime}
 import java.time.format.DateTimeFormatter
@@ -76,16 +80,24 @@ object driver extends App {
     .orderBy(desc("Number_of_flights")).limit(100)
 
   //////////////////////////////////////////////////////////////////////////////////////////////
-  // SOLUTION 2 - greatest number of countries a passenger has been in without being in the UK
+  // SOLUTION 3 - greatest number of countries a passenger has been in without being in the UK
   //////////////////////////////////////////////////////////////////////////////////////////////
 
+  val excludeCountry: String = "uk"
+  val outputDF3: DataFrame = solveForQ3.solution(inputFlightsData, excludeCountry)
+  outputDF3.show()
 
 
-  writeOutput(outputDF1,outputDF2)
+inputFlightsData.filter(col("passengerId") === 10977).orderBy("date").show
+
+
+
+  writeOutput(outputDF1,outputDF2,outputDF3)
   // WRITE OUTPUT
-  def writeOutput(outdfq1:DataFrame,outdfq2:DataFrame) = {
+  def writeOutput(outdfq1:DataFrame,outdfq2:DataFrame,outdfq3:DataFrame) = {
     outdfq1.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ1)
     outdfq2.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ2)
+    outdfq3.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ3)
   }
 
 }
