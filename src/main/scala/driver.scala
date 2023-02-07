@@ -96,7 +96,7 @@ object driver extends App {
   // WRITE OUTPUT
   writeOutput(outputDF1, outputDF2, outputDF3, outputDF4, outputDF5)
 
-  def writeOutput(outdfq1: DataFrame, outdfq2: DataFrame, outdfq3: DataFrame, outdfq4: DataFrame, outdfq5: DataFrame, mode: String = "both") = {
+  def writeOutput(outdfq1: DataFrame, outdfq2: DataFrame, outdfq3: DataFrame, outdfq4: DataFrame, outdfq5: DataFrame, mode: String = "printonly") = {
     if (mode == "fileonly" || mode == "both") {
       outdfq1.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ1)
       outdfq2.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ2)

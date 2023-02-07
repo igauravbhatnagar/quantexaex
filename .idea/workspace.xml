@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc85a41-d2e8-49d3-b061-4fee95e78135" name="Changes" comment="Q4 completed">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Resources/properties.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/properties.conf" afterDir="false" />
+    <list default="true" id="9dc85a41-d2e8-49d3-b061-4fee95e78135" name="Changes" comment="Bonus Q completed">
       <change beforePath="$PROJECT_DIR$/src/main/scala/driver.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/driver.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675794616917</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Bonus Q completed">
+      <created>1675807232922</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1675807232922</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -178,7 +183,8 @@
     <MESSAGE value="Q1 and Q2 completed" />
     <MESSAGE value="Q3 completed" />
     <MESSAGE value="Q4 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Q4 completed" />
+    <MESSAGE value="Bonus Q completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bonus Q completed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
