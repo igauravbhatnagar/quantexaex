@@ -7,7 +7,7 @@ import org.apache.spark.sql.expressions.Window
 import org.apache.spark.sql.{DataFrame, SaveMode, SparkSession}
 import org.apache.spark.sql.functions.{col, date_format, desc, lag, lit, to_date, when}
 import org.apache.spark.sql.functions._
-import org.quantexa.exerciset1.solutions.solveForQ3
+import org.quantexa.exerciset1.solutions._
 
 import java.time.{LocalDate, LocalDateTime}
 import java.time.format.DateTimeFormatter
@@ -39,12 +39,12 @@ object driver extends App {
   // Read Input Data (lazy)
 
   // Read Flights data csv
-  val inputFlightsData = spark.read
+  val inputFlightsDataDF = spark.read
                           .option("header", "true")
                           .csv(configs.getString("paths.flightdataq1"))
 
   // Read Passengers data csv
-  val inputPassengersData = spark.read
+  val inputPassengersDataDF = spark.read
                           .option("header", "true")
                           .csv(configs.getString("paths.passengersdataq2"))
 
@@ -67,37 +67,36 @@ object driver extends App {
   //////////////////////////////////////////////////////
   // SOLUTION 1 - total number of flights for each month
   //////////////////////////////////////////////////////
-  val outputDF1 = inputFlightsData.withColumn("Month",date_format(col("date"),fmtMonth))
-                  .groupBy("Month").count.withColumnRenamed("count","Number_of_FLights")
-                  .orderBy("Month").withColumn("Month",col("Month").cast("Int"))
+
+  val outputDF1 = solveForQ1.process(inputFlightsDataDF)
 
   //////////////////////////////////////////////////////
   // SOLUTION 2 - names of the 100 most frequent flyers
   //////////////////////////////////////////////////////
 
-  val frequentFlierDF = inputFlightsData.groupBy("passengerId").count().withColumnRenamed("count","Number_of_FLights")
-  val outputDF2 = frequentFlierDF.join(inputPassengersData,"passengerId").select("passengerId","Number_of_flights","firstName","lastName")
-    .orderBy(desc("Number_of_flights")).limit(100)
+  val outputDF2 = solveForQ2.process(inputFlightsDataDF, 100)
 
   //////////////////////////////////////////////////////////////////////////////////////////////
   // SOLUTION 3 - greatest number of countries a passenger has been in without being in the UK
   //////////////////////////////////////////////////////////////////////////////////////////////
 
   val excludeCountry: String = "uk"
-  val outputDF3: DataFrame = solveForQ3.solution(inputFlightsData, excludeCountry)
-  outputDF3.show()
+  val outputDF3 = solveForQ3.process(inputFlightsDataDF, excludeCountry)
+
+  //////////////////////////////////////////////////////////////////////////////////////////////
+  // SOLUTION 4 - Find the passengers who have been on more than 3 flights together.
+  //////////////////////////////////////////////////////////////////////////////////////////////
+
+  val outputDF4: DataFrame = solveForQ4.process(inputFlightsDataDF)
 
 
-inputFlightsData.filter(col("passengerId") === 10977).orderBy("date").show
-
-
-
-  writeOutput(outputDF1,outputDF2,outputDF3)
   // WRITE OUTPUT
-  def writeOutput(outdfq1:DataFrame,outdfq2:DataFrame,outdfq3:DataFrame) = {
+  writeOutput(outputDF1,outputDF2,outputDF3,outputDF4)
+  def writeOutput(outdfq1:DataFrame,outdfq2:DataFrame,outdfq3:DataFrame,outdfq4:DataFrame) = {
     outdfq1.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ1)
     outdfq2.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ2)
     outdfq3.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ3)
+    outdfq4.coalesce(1).write.option("header", "true").mode(SaveMode.Overwrite).csv(outputLocQ4)
   }
 
 }
