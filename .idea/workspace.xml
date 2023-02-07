@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dc85a41-d2e8-49d3-b061-4fee95e78135" name="Changes" comment="Initial stable commit">
+    <list default="true" id="9dc85a41-d2e8-49d3-b061-4fee95e78135" name="Changes" comment="Q4 completed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Resources/properties.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Resources/properties.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/driver.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/driver.scala" afterDir="false" />
@@ -29,8 +29,39 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Featureq4" />
+                    <option name="lastUsedInstant" value="1675780175" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1675780174" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -61,11 +92,15 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\quantexaex\src\main\scala" />
       <recent name="C:\Projects\quantexaex\src\main\scala\Resources\input" />
       <recent name="C:\Projects\quantexaex\src\main\scala\Main" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.quantexa.exerciset1" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.quantexa.exerciset1.solutions" />
     </key>
   </component>
   <component name="RunManager">
@@ -100,11 +135,64 @@
       <option name="project" value="LOCAL" />
       <updated>1675703213764</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Q1 and Q2 completed">
+      <created>1675713611100</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675713611100</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Q3 completed">
+      <created>1675779869230</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675779869230</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Q4 completed">
+      <created>1675794616917</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675794616917</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.conf" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial stable commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial stable commit" />
+    <MESSAGE value="Q1 and Q2 completed" />
+    <MESSAGE value="Q3 completed" />
+    <MESSAGE value="Q4 completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Q4 completed" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/main/scala/solutions/solveForBonusQ.scala</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
