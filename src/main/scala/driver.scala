@@ -52,11 +52,8 @@ object driver extends App {
 
   val dateToday = LocalDate.now()
   val TimeToday = LocalDateTime.now()
-  val dateFormat = "ddMMYYYY"
-  val fmtYear = "YYYY"
+
   val fmtMonth = "MM"
-  val fmtDay = "dd"
-  val TimeStampFormat = "ddMMYYYY"
 
   //////////////////////////////////////////////////////
   // SOLUTION 1 - total number of flights for each month

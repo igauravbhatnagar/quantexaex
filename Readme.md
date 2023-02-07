@@ -18,5 +18,4 @@ https://docs.scala-lang.org/getting-started/intellij-track/building-a-scala-proj
 
 ### 6. On the Run menu. Click Run ```Run the program```.
 
-
 ##Output
